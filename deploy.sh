@@ -11,13 +11,12 @@ git add .
 git commit -m "Update Jekyll project files"
 git push
 
-# Change to the j-underdown.github.io folder
-cd ../j-underdown.github.io
-
 # Commit and push changes in j-underdown.github.io repository
-git add .
-git commit -m "Update built website files"
-git push
+(
+  cd ../j-underdown.github.io
+  git add .
+  git commit -m "Update built website files"
+  git push
+)
 
-# Return to the jekyll-project folder
-cd ../jekyll-project
+# The working directory is not changed in this script
