@@ -1,15 +1,19 @@
 ---
 layout: default
-title: Blog
-description: Made includes a beautiful grid-based blog with pagination.
+pagination:
+  enabled: true
+  collection: collection1
+  per_page: 7
+title: Collection1
+description: Find out what I've been up through my latest adventures in Collection1.
 featured_image: /images/social.jpg
 ---
 
-<div class="page-blog">
+<div class="page-{{ page.collection }}">
 	<header class="header--single">
 		<div class="wrap">
-			<h1 class="header__title">Blog</h1>
-			<p class="header__subtitle subtitle--light">Find out what I've been up through my latest photo blogging adventures.</p>
+			<h1 class="header__title">{{ page.title }}</h1>
+			<p class="header__subtitle subtitle--light">{{ page.description }}</p>
 		</div>
 	</header>
 

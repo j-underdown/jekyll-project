@@ -1,7 +1,10 @@
-site: Made Jekyll Theme
+site: Julian Underdown
 
-url: 
-baseurl: 
+url: https://www.julianunderdown.com/
+baseurl:
+
+tags_dir: tag
+all_tags_dir: tags
 
 collections:
   pages:
@@ -13,6 +16,15 @@ collections:
   projects:
     output: true
     permalink: /project/:slug
+  collection1:
+    output: true
+    permalink: /collection1/:slug
+  collection2:
+    output: true
+    permalink: /collection2/:slug
+  collection3:
+    output: true
+    permalink: /collection3/:slug
 
 defaults:
   -
@@ -38,6 +50,24 @@ defaults:
       type: "projects"
     values:
       layout: "project"
+  -
+    scope:
+      path: ""
+      type: "collection1"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "collection2"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "collection3"
+    values:
+      layout: "post"
 
 markdown: kramdown
 highlighter: rouge
@@ -50,12 +80,23 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
-  
+
 sass:
   style: compressed
 
 plugins:
+  - jekyll-paginate-v2
   - jekyll-sitemap
+  - webrick
+  - kramdown-parser-gfm
 
-paginate: 7
-paginate_path: "/blog/page-:num/"
+pagination:
+  enabled: true
+  per_page: 7
+  sort_field: 'date'
+  sort_reverse: true
+collections:
+  - blog
+  - collection1
+  - collection2
+  - collection3
