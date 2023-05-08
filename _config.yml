@@ -1,10 +1,7 @@
-site: Julian Underdown
+site: Made Jekyll Theme
 
-url: https://www.julianunderdown.com/
+url:
 baseurl:
-
-tags_dir: tag
-all_tags_dir: tags
 
 collections:
   pages:
@@ -16,15 +13,9 @@ collections:
   projects:
     output: true
     permalink: /project/:slug
-  collection1:
+  collections_template:
     output: true
-    permalink: /collection1/:slug
-  collection2:
-    output: true
-    permalink: /collection2/:slug
-  collection3:
-    output: true
-    permalink: /collection3/:slug
+    permalink: /collections_template/:slug
 
 defaults:
   -
@@ -53,19 +44,7 @@ defaults:
   -
     scope:
       path: ""
-      type: "collection1"
-    values:
-      layout: "post"
-  -
-    scope:
-      path: ""
-      type: "collection2"
-    values:
-      layout: "post"
-  -
-    scope:
-      path: ""
-      type: "collection3"
+      type: "collections_template"
     values:
       layout: "post"
 
@@ -85,18 +64,21 @@ sass:
   style: compressed
 
 plugins:
-  - jekyll-paginate-v2
   - jekyll-sitemap
-  - webrick
-  - kramdown-parser-gfm
+  - jekyll-paginate-v2
+
 
 pagination:
-  enabled: true
-  per_page: 7
-  sort_field: 'date'
-  sort_reverse: true
-collections:
-  - blog
-  - collection1
-  - collection2
-  - collection3
+  collections:
+    posts:
+      per_page: 7
+      permalink: '/blog/page:num/'
+      sort_field: 'date'
+      sort_reverse: true
+      title: 'Collections Template Page :num'
+    collections_template:
+      per_page: 7
+      permalink: '/collections_template/page:num/'
+      sort_field: 'date'
+      sort_reverse: true
+      title: 'Collections Template Page :num'
