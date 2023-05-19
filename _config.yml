@@ -13,9 +13,6 @@ collections:
   projects:
     output: true
     permalink: /project/:slug
-  collections_template:
-    output: true
-    permalink: /collections_template/:slug
 
 defaults:
   -
@@ -41,12 +38,6 @@ defaults:
       type: "projects"
     values:
       layout: "project"
-  -
-    scope:
-      path: ""
-      type: "collections_template"
-    values:
-      layout: "post"
 
 markdown: kramdown
 highlighter: rouge
@@ -65,20 +56,6 @@ sass:
 
 plugins:
   - jekyll-sitemap
-  - jekyll-paginate-v2
 
-
-pagination:
-  collections:
-    posts:
-      per_page: 7
-      permalink: '/blog/page:num/'
-      sort_field: 'date'
-      sort_reverse: true
-      title: 'Collections Template Page :num'
-    collections_template:
-      per_page: 7
-      permalink: '/collections_template/page:num/'
-      sort_field: 'date'
-      sort_reverse: true
-      title: 'Collections Template Page :num'
+paginate: 7
+paginate_path: "/blog/page-:num/"

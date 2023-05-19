@@ -1,0 +1,40 @@
+---
+layout: default
+title: Tags
+description: Browse posts by tags
+header_title: Tags
+header_subtitle: Explore topics that interest you.
+---
+
+<div class="page-blog">
+    <header class="header--single">
+        <div class="wrap">
+            <h1 class="header__title">{{ page.header_title }}</h1>
+            <p class="header__subtitle subtitle--light">{{ page.header_subtitle }}</p>
+        </div>
+
+        <section class="all-tags">
+            <div class="wrap">
+                <div class="tags__list">
+                  {% capture tags %}
+                    {% for tag in site.tags %}
+                      {{ tag[1].size | plus: -10000 }}###{{ tag[0] | replace: ' ', '##' }}###{{ tag[1].size }}
+                    {% endfor %}
+                  {% endcapture %}
+                  {% assign sorted_tags = tags | split: ' ' | sort %}
+                  {% for sorted_tag in sorted_tags %}
+                      {% assign items = sorted_tag | split: '###' %}
+                      {% assign tag = items[1] | replace: '##', ' ' %}
+                      {% assign count = items[2] | plus: 0 %}
+                      <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}" class="tag-pill">{{ tag }} <span class="tag-count">({{ count }})</span></a>
+                  {% endfor %}
+                </div>
+            </div>
+        </section>
+
+
+
+    </header>
+
+
+</div>
