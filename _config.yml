@@ -55,7 +55,25 @@ sass:
   style: compressed
 
 plugins:
-  - jekyll-sitemap
+  - jekyll-paginate-v2
 
-paginate: 7
-paginate_path: "/blog/page-:num/"
+pagination:
+  enabled: true
+  per_page: 7
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
+  collections:
+    posts:
+      output: true
+      permalink: '/blog/page/:num/'
+      title_suffix: ' - page :num'
+      layout: 'post'
+    tags:
+      output: true
+      permalink: '/tags/:name/:num/'
+      title_suffix: ' - page :num'
+      layout: 'tag_page'
