@@ -1,7 +1,7 @@
 site: Made Jekyll Theme
 
-url:
-baseurl:
+url: 
+baseurl: 
 
 collections:
   pages:
@@ -50,30 +50,12 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
-
+  
 sass:
   style: compressed
 
 plugins:
-  - jekyll-paginate-v2
+  - jekyll-sitemap
 
-pagination:
-  enabled: true
-  per_page: 7
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
-  trail:
-    before: 2
-    after: 2
-  collections:
-    posts:
-      output: true
-      permalink: '/blog/page/:num/'
-      title_suffix: ' - page :num'
-      layout: 'post'
-    tags:
-      output: true
-      permalink: '/tags/:name/:num/'
-      title_suffix: ' - page :num'
-      layout: 'tag_page'
+paginate: 7
+paginate_path: "/blog/page-:num/"
