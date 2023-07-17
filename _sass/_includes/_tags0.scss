@@ -1,0 +1,41 @@
+// - - - - - - - - - - - - - - - - - -
+
+// Tags
+
+// - - - - - - - - - - - - - - - - - -
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Basics
+
+.tag-pill {
+  display: inline-block;
+  background-color: $accent-color;
+  color: white;
+  padding: 3px 9px; /* Increased padding by 50% */
+  border-radius: 15px; /* Increased border-radius by 50% */
+  font-size: 15px; /* Increased font-size by 50% */
+  line-height: 1;
+  margin: 2px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+
+  .tag-pill .tag-count {
+    margin-left: 10px; /* Add some space between the tag name and the number */
+  }
+
+
+  &:hover {
+    color: white;
+    background-color: darken($color: $accent-color, $amount: 5);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+
+.tags__list {
+  padding-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+}

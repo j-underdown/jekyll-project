@@ -3,7 +3,7 @@ basic_settings:
   favicon_image: /images/favicon.png
 
 header_settings:
-  logo_image: 
+  logo_image:
   logo_width: 100
 
 menu_settings:
@@ -12,9 +12,13 @@ menu_settings:
       url: '/'
     - title: 'Blog'
       url: '/blog/'
+    - title: 'Tags'
+      url: '/tags/'
+    - title: 'Jekyll'
+      url: '/tags/jekyll/'
 
 footer_settings:
-  logo_image: 
+  logo_image:
   logo_width: 100
   tagline: A beautiful, minimal portfolio Jekyll theme
 
@@ -70,7 +74,7 @@ color_settings:
   error_color: '#D64541'
 
 font_settings:
-  font_embed: '<link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700|Ubuntu+Mono:400,700" rel="stylesheet">'
+  font_embed: '<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Ubuntu+Mono:400,700" rel="stylesheet">'
   title_font: 'Rubik, sans-serif'
   body_font: '"Ubuntu Mono", sans-serif'
   regular_weight: 400
