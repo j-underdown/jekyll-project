@@ -14,14 +14,9 @@
   border-radius: 15px; /* Increased border-radius by 50% */
   font-size: 15px; /* Increased font-size by 50% */
   line-height: 1;
-  margin: 2px -1px;
+  margin: 2px -2px;
   transition: background-color 0.3s ease;
   text-decoration: none;
-
-  .tag-pill .tag-count {
-    margin-left: 10px; /* Add some space between the tag name and the number */
-  }
-
 
   &:hover {
     color: white;
@@ -33,18 +28,52 @@
   }
 }
 
+.cloud-tag-pill {
+  display: inline-block;
+  background-color: $accent-color;
+  color: white;
+  padding: 3px 9px; /* Increased padding by 50% */
+  border-radius: 15px; /* Increased border-radius by 50% */
+  font-size: 15px; /* Increased font-size by 50% */
+  line-height: 1;
+  margin: 2px 2px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+
+  .tag-pill .tag-count {
+    margin-left: 0px; /* Add some space between the tag name and the number */
+  }
+
+  &:hover {
+    color: white;
+    background-color: darken($color: $accent-color, $amount: 5);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
 
 .tags__list {
   padding-top: 25px;
   display: flex;
   flex-wrap: wrap;
+  margin-left: -28px; /* Adjust as needed */
+  padding-left: 0; /* Adjust as needed */
 }
-
 
 .top-post-tag {
   margin-bottom: 22px;
 }
 
 .post_page__tags {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
+  margin-top: 22px;
+}
+
+@media screen and (max-width: 480px) {
+  .post_page__tags {
+    margin-bottom: 40px; /* adjust as needed for mobile */
+    margin-top: -10px; /* adjust as needed for mobile */
+  }
 }

@@ -16,9 +16,6 @@ collections:
   tags:
     output: true
     permalink: /tags/:name
-  collection_template:
-    output: true
-    permalink: /:collection/:name
 
 defaults:
   -
@@ -50,12 +47,6 @@ defaults:
       type: "tags"
     values:
       layout: "tag_page"
-  -
-    scope:
-      path: ""
-      type: "collection_template"
-    values:
-      layout: "collection_template"
 
 markdown: kramdown
 highlighter: rouge

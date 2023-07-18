@@ -12,8 +12,51 @@ pagination:
 		<div class="wrap">
 			<h1 class="header__title">Blog</h1>
 			<p class="header__subtitle subtitle--light">Find out what I've been up through my latest photo blogging adventures.</p>
-		</div>
+      {% assign tag_list = "" | split: "," %}
+      {% assign tag_counts = "" | split: "," %}
+      {% assign tag_count_pairs = "" | split: "," %}
+
+      {% for post in site.posts %}
+        {% for tag in post.tags %}
+          {% unless tag_list contains tag %}
+            {% assign tag_list = tag_list | push: tag %}
+            {% assign count = 0 %}
+            {% for p in site.posts %}
+              {% if p.tags contains tag %}
+                {% assign count = count | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+            {% assign tag_counts = tag_counts | push: count %}
+          {% endunless %}
+        {% endfor %}
+      {% endfor %}
+
+      {% assign range_end = tag_list.size | minus: 1 %}
+
+      {% for i in (0..range_end) %}
+        {% assign pair = tag_counts[i] | append: '-' | append: tag_list[i] %}
+        {% assign tag_count_pairs = tag_count_pairs | push: pair %}
+      {% endfor %}
+
+      {% assign sorted_tag_count_pairs = tag_count_pairs | sort | reverse %}
+
+      <section class="all-tags">
+          <div class="wrap">
+              <div class="tags__list">
+              {% for pair in sorted_tag_count_pairs %}
+                  {% assign items = pair | split: '-' %}
+                  {% assign tag = items[1] %}
+                  {% assign count = items[0] %}
+                  <a href="{{ site.baseurl }}/tags/{{ tag | downcase }}" class="tag-pill cloud-tag-pill">{{ tag }} <span class="tag-count">({{ count }})</span></a>
+              {% endfor %}
+              </div>
+          </div>
+      </section>
+
+    </div>
 	</header>
+
+
 
 	<section class="all-posts">
 		<div class="wrap">

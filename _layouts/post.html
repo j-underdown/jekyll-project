@@ -7,13 +7,13 @@ layout: default
 
 		<div class="wrap">
 			<h1 class="post__title">{{ page.title }}</h1>
-			<!-- Display post tags -->
-            <div class="post_page__tags">
-                {% for tag in page.tags %}
-                    <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}" class="tag-pill">{{ tag }}</a>
-                {% endfor %}
-            </div>
 			<time class="post__date label">{{ page.date | date_to_long_string }}</time>
+			<!-- Display post tags -->
+						<div class="post_page__tags">
+								{% for tag in page.tags %}
+										<a href="{{ site.baseurl }}/tags/{{ tag | slugify }}" class="tag-pill">{{ tag }}</a>
+								{% endfor %}
+						</div>
 		</div>
 
 		<img src="{{ page.featured_image | relative_url }}" class="post__featured-image">
