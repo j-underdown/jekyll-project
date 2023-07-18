@@ -394,24 +394,29 @@
 
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Listing post click
 
-	// Click anywhere on the post to go to the link
-	$(document).on('click', '.post', function () {
+	// Click anywhere on the post to go to the link, except on the tag-pill
+	$(document).on('click', '.post', function (event) {
 
-		var targetPost = $(this).find('.post__title a').attr('href');
+	    // Prevent this event from triggering when a tag-pill is clicked
+	    if ($(event.target).hasClass('tag-pill')) {
+	        return;
+	    }
 
-		if ($('body').hasClass('ajax-loading')) {
+	    var targetPost = $(this).find('.post__title a').attr('href');
 
-			// Change navTarget
-			navTarget = targetPost;
+	    if ($('body').hasClass('ajax-loading')) {
 
-			// Switch the URL via History
-			History.pushState(null, docTitle, targetPost);
-		}
+	        // Change navTarget
+	        navTarget = targetPost;
 
-		else {
-			// Use the given link
-			window.location = targetPost;
-		}
+	        // Switch the URL via History
+	        History.pushState(null, docTitle, targetPost);
+	    }
+
+	    else {
+	        // Use the given link
+	        window.location = targetPost;
+	    }
 	});
 
 

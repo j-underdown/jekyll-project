@@ -14,7 +14,7 @@
   border-radius: 15px; /* Increased border-radius by 50% */
   font-size: 15px; /* Increased font-size by 50% */
   line-height: 1;
-  margin: 2px;
+  margin: 2px -1px;
   transition: background-color 0.3s ease;
   text-decoration: none;
 
@@ -38,4 +38,13 @@
   padding-top: 25px;
   display: flex;
   flex-wrap: wrap;
+}
+
+
+.top-post-tag {
+  margin-bottom: 22px;
+}
+
+.post_page__tags {
+  margin-bottom: 30px;
 }

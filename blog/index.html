@@ -33,12 +33,11 @@ pagination:
 								<time class="post__date label--small">{{ post.date | date: "%B %d, %Y" }}</time>
 								<h2 class="post__title h4"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
 								<!-- Display post tags -->
-                                <div class="post__tags">
-                                    {% for tag in post.tags %}
-                                        <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}" class="tag-pill">{{ tag }}</a>
-                                    {% endfor %}
-                                </div>
-								<p class="post__subtitle">{{ post.subtitle }}</p>
+                <div class="post__tags">
+                    {% for tag in post.tags %}
+                        <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}" class="tag-pill top-post-tag">{{ tag }}</a>
+                    {% endfor %}
+                </div>
 								<p class="post__description">{{ post.description }}</p>
 								<a href="{{ post.url | relative_url }}" class="post__link button--text--accent --right">Keep Reading</a>
 							</div>

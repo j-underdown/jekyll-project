@@ -6,7 +6,19 @@ layout: default
 	<header class="header--single">
 		<div class="wrap">
 			<h1 class="header__title">{{ page.tag }}</h1>
-			<p class="header__subtitle subtitle--light">Browse posts tagged with "{{ page.tag }}"</p>
+			{% assign counter = 0 %}
+			{% for post in site.posts %}
+			    {% if post.tags contains page.tag %}
+			        {% assign counter = counter | plus: 1 %}
+			    {% endif %}
+			{% endfor %}
+			{% if counter == 1 %}
+			    <p class="header__subtitle subtitle--light">{{ counter }} post</p>
+			{% else %}
+			    <p class="header__subtitle subtitle--light">{{ counter }} posts</p>
+			{% endif %}
+
+
 		</div>
 	</header>
 
