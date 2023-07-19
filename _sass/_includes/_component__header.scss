@@ -64,7 +64,7 @@
     padding: 64px 0;
 
     .wrap {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 2fr;
     }
 
     .header__menu {
@@ -72,7 +72,7 @@
       height: initial;
       position: relative;
       background-color: none;
-      justify-self: center;
+      justify-self: end;
       opacity: 1;
       visibility: visible;
       top: 0;
@@ -194,10 +194,11 @@
   @include mq(tabletp) {
     margin-top: 0;
     flex-direction: row;
+    align-items: flex-end;
 
     .menu__list__item {
       margin-bottom: 0px;
-      
+
       &:not(:first-child) {
         margin-left: 50px;
       }

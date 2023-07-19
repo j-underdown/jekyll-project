@@ -165,9 +165,15 @@
 		// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Active links
 
 		// Switch active link states
-		$('.active-link').removeClass('active-link');
+		$(document).ready(function() {
+		    var navTarget = window.location.pathname;
 
-		$('a[href="' + navTarget + '"]').addClass('active-link');
+		    // Switch active link states
+		    $('.active-link').removeClass('active-link');
+
+		    $('a[href="' + navTarget + '"]').addClass('active-link');
+		});
+
 
 
 

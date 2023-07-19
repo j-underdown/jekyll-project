@@ -1,5 +1,5 @@
 basic_settings:
-  site_title: Made
+  site_title: Test Title Two Two
   favicon_image: /images/favicon.png
 
 header_settings:
@@ -12,8 +12,8 @@ menu_settings:
       url: '/'
     - title: 'Blog'
       url: '/blog/'
-    - title: 'Jekyll'
-      url: '/tags/jekyll/'
+    - title: 'Contact'
+      url: '/contact/'
 
 footer_settings:
   logo_image:
@@ -35,7 +35,7 @@ contact_settings:
 
 social_settings:
   facebook_url: ''
-  twitter_url: ''
+  twitter_url: 'https://twitter.com/JulianUnderdown'
   instagram_url: ''
   snapchat_url: ''
   youtube_url: ''
