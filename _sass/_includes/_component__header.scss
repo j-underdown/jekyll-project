@@ -219,3 +219,21 @@
     }
   }
 }
+
+// Julian's modifications:
+
+.header__logo__img {
+    display: block;
+}
+
+.header__logo__img-hover {
+    display: none;
+}
+
+.header__logo:hover .header__logo__img {
+    display: none;
+}
+
+.header__logo:hover .header__logo__img-hover {
+    display: block;
+}

@@ -3,9 +3,16 @@
 	<div class="wrap grid__2-col">
 
 		{% if site.data.settings.header_settings.logo_image %}
-		<a href="{{ site.baseurl }}/" class="header__logo">
-			<img src="{{ site.data.settings.header_settings.logo_image | relative_url }}" class="header__logo__img">
+		<a class="header__logo" style="cursor: pointer;">
+		    <img src="{{ site.data.settings.header_settings.logo_image | relative_url }}" class="header__logo__img">
 		</a>
+		{% if site.data.settings.header_settings.logo_image_hover %}
+		<a class="header__logo" style="cursor: pointer;">
+		    <img src="{{ site.data.settings.header_settings.logo_image_hover | relative_url }}" class="header__logo__img-hover">
+		</a>
+		{% endif %}
+		{% endif %}
+
 		{% else %}
 		<a href="{{ site.baseurl }}/" class="header__title">
 			{{ site.data.settings.basic_settings.site_title }}
@@ -24,16 +31,9 @@
 						<a href="{{ item.url | relative_url }}" class="menu__list__item__link button--text">{{ item.title }}</a>
 					</li>
 					{% endfor %}
-					<!-- CTA has been commented out for UI purposes for now -->
-					<!-- <li class="menu__cta">
-						<a href="#" class="menu__cta__link button--text contact-trigger js-contact">Get In Touch</a>
-					</li> -->
 				</ul>
 			</div>
 		</nav>
-
-		<!-- The 'Get In Touch' button is temporarily commented out from the UI -->
-		<!-- <a href="#" class="header__cta button--fill contact-trigger js-contact">Get In Touch</a> -->
 
 	</div>
 
