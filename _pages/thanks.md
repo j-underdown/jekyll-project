@@ -1,8 +1,8 @@
 ---
 title: Thank you
 subtitle: Your message was sent successfully.
-description: Show off your best work with this beautiful, minimal and customizable portfolio theme.
+description: Thank you page to be shown after a form is submitted.
 featured_image: /images/social.jpg
 ---
 
-Please note, this contact form is for demo purposes only and is not monitored. Please contact us [via our website](https://jekyllthemes.io) if you need support.
+Thank you for reaching out! I will get back to you as soon as I can.

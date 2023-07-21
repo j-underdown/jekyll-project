@@ -1,8 +1,8 @@
 ---
 layout: default
-overtitle: Made is a Jekyll theme
-title: For designers and web developers
-description: Show off your best work with this beautiful, minimal and customizable portfolio theme.
+overtitle: Contact
+title: Julian Underdown
+description: Let's talk
 featured_image: /images/social.jpg
 ---
 
