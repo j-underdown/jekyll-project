@@ -1,5 +1,5 @@
 basic_settings:
-  site_title: Test Title Two Two
+  site_title: Julian Underdown
   favicon_image: /images/favicon.png
 
 header_settings:
@@ -22,7 +22,7 @@ menu_settings:
 footer_settings:
   logo_image:
   logo_width: 100
-  tagline: A beautiful, minimal portfolio Jekyll theme
+  tagline: # keeping blank for now
 
 hero_settings:
   background_image: /images/backgrounds/background-hero.svg
@@ -31,11 +31,11 @@ post_settings:
   grid_spacing: 10
 
 contact_settings:
-  email_address: ''
-  form_action: 'https://formspree.io/hello@jekyllthemes.io'
+  email_address: 'contact.julianunderdown@pm.me'
+  form_action: 'https://formspree.io/f/mjvqkozd'
   confirmation_url: '/thanks'
   email_subject: 'Contact form submission'
-  send_button_text: 'Get in Touch'
+  send_button_text: 'Email me'
 
 social_settings:
   facebook_url: ''
@@ -55,7 +55,7 @@ social_settings:
   dribbble_url: ''
   behance_url: ''
   deviantart_url: ''
-  github_url: ''
+  github_url: 'https://github.com/j-underdown'
   reddit_url: ''
   flickr_url: ''
   etsy_url: ''
@@ -63,7 +63,7 @@ social_settings:
   soundcloud_url: ''
   spotify_url: ''
   bandcamp_url: ''
-  linkedin_url: ''
+  linkedin_url: 'https://de.linkedin.com/in/junderdown'
 
 color_settings:
   background_color: '#ffffff'

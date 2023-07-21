@@ -1,40 +1,39 @@
 <header class="header--main">
+    <div class="wrap grid__2-col">
+        <div class="logo-menu-container">
 
-	<div class="wrap grid__2-col">
+            {% if site.data.settings.header_settings.logo_image %}
+            <div class="logo-container">
+                <a class="header__logo" style="cursor: pointer;">
+                    <img src="{{ site.data.settings.header_settings.logo_image | relative_url }}" class="header__logo__img" style="width:{{ site.data.settings.header_settings.logo_width }}px;">
+                    {% if site.data.settings.header_settings.logo_image_hover %}
+                        <img src="{{ site.data.settings.header_settings.logo_image_hover | relative_url }}" class="header__logo__img-hover" style="width:{{ site.data.settings.header_settings.logo_width_hover }}px;">
+                    {% endif %}
+                </a>
+            </div>
+            {% else %}
+            <div class="logo-container">
+                <a href="{{ site.baseurl }}/" class="header__title">
+                    {{ site.data.settings.basic_settings.site_title }}
+                </a>
+            </div>
+            {% endif %}
 
-		{% if site.data.settings.header_settings.logo_image %}
-		<a class="header__logo" style="cursor: pointer;">
-		    <img src="{{ site.data.settings.header_settings.logo_image | relative_url }}" class="header__logo__img">
-		</a>
-		{% if site.data.settings.header_settings.logo_image_hover %}
-		<a class="header__logo" style="cursor: pointer;">
-		    <img src="{{ site.data.settings.header_settings.logo_image_hover | relative_url }}" class="header__logo__img-hover">
-		</a>
-		{% endif %}
-		{% endif %}
+            <nav class="header__menu">
+                <div class="menu__wrap">
+                    <ul class="menu__list">
+                        {% for item in site.data.settings.menu_settings.menu_items %}
+                        <li class="menu__list__item">
+                            <a href="{{ item.url | relative_url }}" class="menu__list__item__link button--text">{{ item.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </nav>
 
-		{% else %}
-		<a href="{{ site.baseurl }}/" class="header__title">
-			{{ site.data.settings.basic_settings.site_title }}
-		</a>
-		{% endif %}
-
-		<div class="menu__toggle js-menu-toggle">
-			<div class="menu__toggle__icon"><span></span></div>
-		</div>
-
-		<nav class="header__menu">
-			<div class="menu__wrap">
-				<ul class="menu__list">
-					{% for item in site.data.settings.menu_settings.menu_items %}
-					<li class="menu__list__item">
-						<a href="{{ item.url | relative_url }}" class="menu__list__item__link button--text">{{ item.title }}</a>
-					</li>
-					{% endfor %}
-				</ul>
-			</div>
-		</nav>
-
-	</div>
-
+        </div>
+        <div class="menu__toggle js-menu-toggle">
+            <div class="menu__toggle__icon"><span></span></div>
+        </div>
+    </div>
 </header>

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Blog
+subtitle: This is a repository for my written work. It is empty now, as I am just getting started :)
 description: Made includes a beautiful grid-based blog with pagination.
 featured_image: /images/social.jpg
 pagination:
@@ -10,8 +11,8 @@ pagination:
 <div class="page-blog">
 	<header class="header--single">
 		<div class="wrap">
-			<h1 class="header__title">Blog</h1>
-			<p class="header__subtitle subtitle--light">Find out what I've been up through my latest photo blogging adventures.</p>
+			<h1 class="header__title">{{ page.title }}</h1>
+			<p class="header__subtitle subtitle--light">{{ page.subtitle }}</p>
       {% assign tag_list = "" | split: "," %}
       {% assign tag_counts = "" | split: "," %}
       {% assign tag_count_pairs = "" | split: "," %}
