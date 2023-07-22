@@ -15,9 +15,9 @@ menu_settings:
     #- title: 'Projects'
     #  url: '/projects/'
     - title: 'Blog'
-      url: '/blog/'
+      url: '/blog'
     - title: 'Contact'
-      url: '/contact/'
+      url: '/contact'
 
 footer_settings:
   logo_image:
